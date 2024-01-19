@@ -1,0 +1,555 @@
+/*  M A I N  */
+
+/* Common styles for all pages */
+
+  @font-face {
+    font-family: "VCROSDMono";
+    src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "VCROSDMono"; /* Apply the font-family to the entire page */
+    src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  }
+  
+        [data-predefined-style="true"] h1,
+        [data-predefined-style="true"] h2,
+        [data-predefined-style="true"] h3,
+        [data-predefined-style="true"] small {
+          font-family: "VCR OSD Mono", Icons;
+          src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+          font-style: normal;
+          font-weight: 400;
+          color: #1d1d1f;
+          position: relative;
+          z-index: 2; /* Text is on top */
+        }
+        
+        [data-predefined-style="true"] h1 a,
+        [data-predefined-style="true"] h2 a,
+        [data-predefined-style="true"] h3 a,
+        [data-predefined-style="true"] small a {
+          color: #1d1d1f;
+          border-bottom-width: 0em;
+        }
+  
+  a:not(:has(img)) {
+    color: black;
+    text-decoration: none;
+    filter: blur(0.6px);
+    transition: 0.1s ease;
+  }
+        
+  a:active,
+  a:focus,
+  a:hover {
+    color: inherit;
+    filter: blur(0px);
+  }
+
+/*  I N D E X  */
+
+.index {
+  cursor: url('/assets/big-click-cursor.png'), auto;
+  background: whitesmoke;
+}
+
+.index .background {
+  background-image: url('/assets/bg.png');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3; /* Image is on top of the background color */
+}
+
+#changingText {
+  position: fixed;
+  bottom: 5%; 
+  right: 5%; 
+  font-size: 3rem; 
+  color: black; 
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+}
+
+.content img {
+  width: 30%;
+  max-width: 10rem;
+  margin: 20px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.content img:first-child {
+  top: 75%;
+  left: 35%;
+}
+
+.content img:last-child {
+  top: 20%;
+  left: 65%;
+}
+
+.marquee {
+  position: absolute;
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  font-size: 1rem;
+  color: black;
+  background-color: #f7ff00;
+  display: inline; 
+  width: fit-content;
+  line-height: 1;
+  z-index: 3;
+}
+
+    .marquee.first {
+      top: 20%;
+      animation: marqueeScrollLeft 30s linear infinite;
+    }
+
+    @keyframes marqueeScrollLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .marquee.second {
+      bottom: 20%;
+      animation: marqueeBounceRight 15s linear infinite;
+    }
+
+    @keyframes marqueeBounceRight {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(100%); }
+      40%, 60% { transform: translateX(0); }
+    }
+
+
+ /*  H E A D E R  */
+
+ header {
+  position: fixed;
+  top: 0;
+  font-size:0.8rem;
+  text-transform:uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 40px); /* Adjusted width */
+  z-index: 1000;
+  padding: 20px;
+}
+
+header h1, header a {
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  font-weight: 400;
+  color: #1d1d1f;
+  text-decoration: none;
+  margin: 0; /* Remove default margin */
+}
+
+header h1 {
+  font-size:0.8rem;
+}
+
+              /* Media query for smaller screens */
+              @media screen and (max-width: 600px) {
+                header {
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+              
+                header h1 {
+                  font-size: 0.6em;
+                  margin-bottom: 10px;
+                }
+              
+                header a {
+                  font-size: 0.6rem;
+                }
+              }    
+
+/*  A B O U T  */
+
+.about {
+  position: absolute;
+  height: 100vh;
+  overflow: hidden;
+  background-color: white; /* Background color is at the bottom */
+}
+
+.about .background {
+  background-image: url('/assets/bg-light.png');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Image is on top of the background color */
+}
+
+.about h1, .about h2, .about p, .about a, .about hr {
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  font-weight: 400;
+  color: #1d1d1f;
+  position: relative;
+  z-index: 2; /* Text and hr are on top of the image */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px; 
+}
+
+.main-content .description {
+  padding-top: 15vw; 
+  padding-bottom: 8vw; 
+  font-size: 1.6rem; 
+  line-height: 1.2; 
+  color: #1d1d1f; 
+}
+
+          /* Media query for smaller screens */
+          @media screen and (max-width: 600px) {
+            .main-content {
+              padding: 10px; /* Adjust the padding for smaller screens */
+            }
+
+          .main-content .description {
+            padding-top: 5vw; /* Adjust padding for smaller screens */
+            font-size: 1rem; /* Adjust font size for smaller screens */
+          }
+}
+
+.main-content .columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content .column {
+  width: 48%; /* Adjust the width as needed */
+}
+
+.main-content h2 {
+  font-size: 1.2rem; /* Adjust the font size for h2 elements */
+}
+
+.main-content p {
+  font-size: 0.9rem; /* Adjust the font size for p elements */
+}
+
+hr {
+  border: none;
+  border-top: 1px dotted #1d1d1f;
+  clear: both;
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+
+/*  O V E R V I E W  */
+
+body {
+  margin: 0;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0.75rem; /* 30px in rem */
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+  opacity: 0.7;
+}
+
+.gallery-item:hover .caption {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/*  S E L E C T E D  W O R K S  */
+
+body {
+  margin: 0;
+  background-color: white;
+  color: black;
+
+}
+
+/*
+.selected-works {
+  cursor: url('/assets/big-pointer-cursor.png'), auto;
+
+} */
+
+.big {
+  cursor: url('path/to/your/big-click-cursor.png'), auto;
+}
+
+a {
+  color: #fff;
+  padding: 4px 8px;
+}
+
+.selected-works .background {
+  background-image: url('/assets/bg-light.png');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Image is on top of the background color */
+}
+
+
+.selected-works .marquee {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  font-size: 1rem;
+  color: black;
+  background-color: #f7ff00;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+section {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.left {
+  text-align: left;
+}
+
+            /* Add this media query for responsive layout */
+            @media screen and (max-width: 800px) {
+              .image-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust column width for smaller screens */
+                gap: 10px; /* Adjust the gap/margin between images for smaller screens */
+              }
+
+              .image-grid a {
+                height: 100px; /* Adjust the height for smaller screens */
+              }
+
+              .image-grid img {
+                width: 100%; /* Make the images fill the container width */
+                height: auto; /* Maintain aspect ratio */
+              }
+            }
+
+ /*  image grid  */
+
+.container {
+  position: relative;
+  padding-top: 25vh; /* Adjusted padding to create space below the fixed header */
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /*border: 2px solid #000;*/
+  padding-top: 5rem; /* Adjusted padding to create space below the fixed header */
+
+}
+
+.image-grid a {
+  position: relative;
+  overflow:visible;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s;
+  height: 20vh;
+  z-index: 1;
+
+}
+
+.image-grid img {
+  width: auto;
+  height: 100%;
+  display: block;
+  margin: 0 auto; /* Center the images */
+  transition: filter 0.3s, transform 0.3s; /* Add transform to the transition */
+  filter: grayscale(100%);
+  position: relative;
+  z-index: 1;
+
+}
+
+.image-link img {
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s, transform 0.3s;
+  filter: grayscale(100%);
+  position: relative;
+  /*border: 2px solid #000; /* Add border between columns */
+
+}
+
+
+.image-grid a:nth-child(odd) img {
+  transform: translateY(-50%);
+}
+
+/* Repeat similar adjustments for even images */
+.image-grid a:nth-child(even) img {
+  transform: translateY(50%);
+}
+
+.image-grid a:hover img {
+  filter: grayscale(0%);
+}
+
+.image-grid a:hover {
+  transform: translateY(-10px);
+}
+
+.image-grid a:hover img {
+  filter: grayscale(0%);
+}
+
+.image-grid a:hover {
+  transform: translateY(-10px);
+}
+
+/*  F O O T E R  */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 40px); /* Adjusted width */
+  bottom: 0;
+  padding: 20px; /* Adjust the padding as needed for top, right, bottom, and left */
+  z-index: 1000;
+}
+
+.footer h1 {
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  font-weight: 400;
+  color: #1d1d1f;
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+
+/*  A S S E T S  */
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  pointer-events: none;
+  user-select: none;
+  color: black; /* Customize the color as needed */
+}
+
+.floating-flyer {
+  pointer-events: auto;
+  z-index: 5; /* Set a higher z-index to ensure it's above the text */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fly 50s linear infinite; /* Apply the fly animation */
+}
+
+.floating-flyer img {
+  width: 30%;
+  height: auto;
+}
+
+@keyframes fly {
+
+  98.001%, 0% {
+                  display: block;
+      transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+    }
+  
+    15% {
+      transform: translateX(10vw) translateY(-100%) rotateZ(180deg)
+    }
+  
+    15.001%, 18% {
+      transform: translateX(10vw) translateY(-30%) rotateZ(0deg)
+    }
+  
+    40% {
+      transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+    }
+  
+    40.001%, 43% {
+      transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+    }
+  
+    65% {
+      transform: translateX(10vw) translateY(50vh) rotateZ(0deg)
+    }
+  
+    65.001%, 68% {
+      transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+    }
+  
+    95% {
+      transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+    }
+  }

@@ -1,0 +1,209 @@
+@font-face {
+    font-family: "VCROSDMono";
+    src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a:not(:has(img)) {
+    color: black;
+    text-decoration: none;
+    filter: blur(0.6px);
+    transition: 0.1s ease;
+  }
+        
+  a:active,
+  a:focus,
+  a:hover {
+    color: inherit;
+    filter: blur(0px);
+  }
+
+  .logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Place the logo above the background */
+}
+  
+.background {
+    background-image: url('/assets/bg-light.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0; /* Image is on top of the background color */
+}
+
+.background.pinned {
+    background-attachment: fixed;
+    background-position-y: -40vh; /* Move the background image to the top */
+    position:fixed;
+    top: 0;
+
+}
+
+
+   /*  H E A D E R  */
+
+ header {
+    position: fixed;
+    top: 0;
+    font-size:0.8rem;
+    text-transform:uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: calc(100% - 40px); /* Adjusted width */
+    z-index: 1000;
+    padding: 20px;
+  }
+  
+  header h1, header a {
+    font-family: "VCROSDMono";
+    src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+    font-weight: 400;
+    color: #1d1d1f;
+    text-decoration: none;
+    margin: 0; /* Remove default margin */
+  }
+  
+  header h1 {
+    font-size:0.8rem;
+  }
+
+  .caption {
+    display: none; /* Initially hide the caption */
+    font-family: "VCROSDMono";
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: black;
+    line-height: 1;   
+    position: absolute;
+    z-index: 100;
+}
+
+.caption p {
+    background-color: #f7ff00;
+    display: inline; 
+    width:fit-content;
+    z-index: 100;
+}
+
+.gallery-item:hover .caption {
+    display: block; /* Show the caption on hover */
+}
+
+a:hover + .caption {
+    display: block;
+ }
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: transparent;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem; 
+  }
+  
+  .main-content .description {
+    position:absolute;
+    font-family: "VCROSDMono";
+    padding-top: 20vw; 
+    padding-bottom: 15vw; 
+    font-size: 1.6rem; 
+    line-height: 1.2; 
+    color: #1d1d1f; 
+    z-index: 3;
+  }
+
+  .main-content .description.pinned {
+    position: fixed;
+    padding-top: 0; 
+    padding: 1rem; 
+    top: 6%; /* Adjust this value based on your header height */
+    width: 100%;
+    left: 0;
+}
+
+/* Common styles for all gallery items */
+/* Common styles for all gallery items */
+.container {
+    flex-wrap: wrap;
+    margin-top:100vh;
+    position: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(33.3vh, 1fr));
+}
+
+.row-x1,
+.row-x2,
+.row-x3 {
+    margin-bottom: 2rem;
+    z-index: 1000;
+}
+
+/* Article styles */
+.article {
+    position: relative;
+    margin: 0; 
+}
+
+/* Row x1 styles */
+.row-x1 .middle.center {
+    max-width: 100%; /* Make sure the video does not exceed the container width */
+}
+
+/* Row x2 styles */
+.row-x2 .top,
+.row-x2 .middle,
+.row-x2 .bottom,
+.row-x2 .center,
+.row-x2 .right,
+.row-x2 .bottom,
+
+/* Row x3 styles */
+
+.row-x3 .top,
+.row-x3 .middle,
+
+.row-x3 .bottom {
+    flex: 1 1 calc(33.33% - 2rem);
+    position: relative;
+    overflow: hidden;
+}
+
+.row-x3 .top {
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+}
+
+
+.row-x3 .right {
+    margin-left: 3rem;
+}
+.row-x3 .center {
+    margin: 0 1rem 3rem;
+}
+
+.row-x3 .bottom {
+    margin-right: 1rem;
+    margin-top: 3rem;
+}

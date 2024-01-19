@@ -1,0 +1,377 @@
+ /* O V E R V I E W */
+
+ /*hehe*/
+
+ @font-face {
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+}
+
+.gallery-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 2rem;
+  gap: 2rem;
+  z-index: 2;
+  margin-bottom: 2rem; /* Adjust as needed */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: visible;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item .caption {
+  font-family: "VCROSDMono";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0.75rem; /* 30px in rem */
+  color: #000;
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+  opacity: 0;
+}
+
+.gallery-item:hover .caption {
+  opacity: 1;
+}
+
+@media (min-width: 769px) {
+  .gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); /* Adjust percentage as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(48%, 1fr)); /* Adjust percentage as needed */
+  }
+}
+
+
+/*  A B O U T  */
+
+.center-vertically {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.about {
+  background-color: white;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden; /* Add this to prevent the background from overflowing */
+}
+
+.about .background {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/bg-light.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.about .background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: -1;
+}
+
+  
+  .about h1, .about h2, .about p, .about a, .about hr {
+    font-family: "VCROSDMono";
+    src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+    font-weight: 400;
+    color: #1d1d1f;
+    position: relative;
+    z-index: 2; /* Text and hr are on top of the image */
+  }
+  
+  .main-content {
+    font-family: "VCROSDMono";
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    height: 100vh;
+    padding-bottom: 10vh; /* Adjust to match the footer height */
+    position: relative;
+    z-index: 2; /* Ensure it's on top of the background */
+  }
+  
+  .main-content .description {
+    padding-top: 15vw;
+    padding-bottom: 8vw;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: #1d1d1f;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 600px) {
+    .main-content .description {
+      font-size: 1rem;
+      padding-top: 5vw;
+    }
+  }
+  
+  .main-content .columns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-content .column {
+    width: 48%; /* Adjust the width as needed */
+  }
+  
+  .main-content h2 {
+    font-size: 1.2rem; /* Adjust the font size for h2 elements */
+  }
+  
+  .main-content p {
+    font-size: 0.9rem; /* Adjust the font size for p elements */
+
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px dotted #1d1d1f;
+    clear: both;
+    margin: 20px 0; /* Adjust margin as needed */
+  }
+  
+
+  /*  R E S T  O F  C S S  */
+
+@font-face {
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Remove unnecessary styles */
+  font-family: "VCROSDMono";
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 100%;
+  background-color: white;
+}
+
+    /* Blurry effect for all links */
+    body a:not(:hover) {
+      filter: blur(0.6px);
+      transition: filter 0.3s ease;
+    }
+
+    /* Remove blur on hover */
+    body a:hover {
+      filter: blur(0);
+    }
+
+    /* Remove blur when link is active or focused */
+    body a:active,
+    body a:focus {
+      filter: blur(0);
+    }
+
+
+    /* Blur styles */
+.blur-images .footer a#imagesLink,
+.blur-about .footer a#aboutLink,
+.blur-video .footer a#videoLink {
+  filter: blur(0.1px);
+}
+
+/*  H E A D E R  */
+
+header {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-top: 1.25rem;
+  text-align: center;
+  background-color: transparent; /* Set the background color to transparent */
+}
+
+header {
+  pointer-events: auto;
+}
+
+  header h1,
+  header a {
+    font-family: "VCROSDMono", monospace;
+    font-weight: 400;
+    color: #1d1d1f;
+    text-decoration: none;
+    margin: 0;
+  }
+
+  header h1 {
+    font-size: 0.8rem;
+  }
+
+
+label {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+  direction: ltr;
+}
+
+input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+.header-right {
+  margin-right: 1.25rem; /* Adjust the margin based on your design */
+}
+
+.header-left {
+  margin-left: 1.25rem; /* Adjust the margin based on your design */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Remove underline and set color for links inside the header */
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+/*  F O O T E R  */
+
+.footer-placeholder {
+  height: 10vh; /* Adjust the height as needed */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.footer h1 {
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  font-weight: 400;
+  color: #1d1d1f;
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+/*  F L Y E R  */
+
+.floating-flyer {
+  pointer-events: auto;
+  z-index: 5; /* Set a higher z-index to ensure it's above the text */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fly 50s linear infinite; /* Apply the fly animation */
+}
+
+.floating-flyer img {
+  width: 30%;
+  height: auto;
+}
+
+@keyframes fly {
+
+  98.001%, 0% {
+                  display: block;
+      transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+    }
+  
+    15% {
+      transform: translateX(10vw) translateY(-100%) rotateZ(180deg)
+    }
+  
+    15.001%, 18% {
+      transform: translateX(10vw) translateY(-30%) rotateZ(0deg)
+    }
+  
+    40% {
+      transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+    }
+  
+    40.001%, 43% {
+      transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+    }
+  
+    65% {
+      transform: translateX(10vw) translateY(50vh) rotateZ(0deg)
+    }
+  
+    65.001%, 68% {
+      transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+    }
+  
+    95% {
+      transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+    }
+  }
+
+
+  /*  M A R Q U E E  */
+

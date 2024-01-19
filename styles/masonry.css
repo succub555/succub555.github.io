@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "VCROSDMono";
+    src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* Remove unnecessary styles */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 100%;
+    background-color: white;
+  }
+  
+      /* Blurry effect for all links */
+      body a:not(:hover) {
+        filter: blur(0.6px);
+        transition: filter 0.3s ease;
+      }
+  
+      /* Remove blur on hover */
+      body a:hover {
+        filter: blur(0);
+      }
+  
+      /* Remove blur when link is active or focused */
+      body a:active,
+      body a:focus {
+        filter: blur(0);
+      }
+  
+  
+      /* Blur styles */
+  .blur-images .footer a#imagesLink,
+  .blur-about .footer a#aboutLink,
+  .blur-video .footer a#videoLink {
+    filter: blur(0.1px);
+  }
+  
+  /*  H E A D E R  */
+  
+  header {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 1.25rem;
+    text-align: center;
+    background-color: transparent; /* Set the background color to transparent */
+  }
+  
+  header {
+    pointer-events: auto;
+  }
+  
+    header h1,
+    header a {
+      font-family: "VCROSDMono", monospace;
+      font-weight: 400;
+      color: #1d1d1f;
+      text-decoration: none;
+      margin: 0;
+    }
+  
+    header h1 {
+      font-size: 0.7rem;
+    }
+  
+  
+  label {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+    direction: ltr;
+  }
+  
+  input[type="checkbox"] {
+    vertical-align: middle;
+  }
+  
+  .header-right {
+    margin-right: 1.25rem; /* Adjust the margin based on your design */
+  }
+  
+  .header-left {
+    margin-left: 1.25rem; /* Adjust the margin based on your design */
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Remove underline and set color for links inside the header */
+  header a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /*  F O O T E R  */
+  
+  .footer-placeholder {
+    height: 10vh; /* Adjust the height as needed */
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .footer h1 {
+    font-family: "VCROSDMono";
+    src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+    font-weight: 400;
+    color: #1d1d1f;
+    margin: 0;
+    font-size: 0.7rem;
+  }
+  
+  .footer-left {
+    text-align: left;
+  }
+  
+  .footer-right {
+    text-align: right;
+  }
+
+.masonry-layout {
+    --columns: 1;
+    --gap: 2rem;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-gap: var(--gap);
+    padding: 1rem;
+    z-index: 100;
+  }
+  .masonry-layout > div > img,
+  .masonry-layout > div > div {
+    width: 100%;
+    margin-bottom: 2rem;
+    z-index: 100;
+  
+  }
+  .masonry-layout.columns-1 {
+    --columns: 1;
+    z-index: 100;
+  
+  }
+  .masonry-layout.columns-2 {
+    --columns: 2;
+    z-index: 100;
+  
+  }
+  .masonry-layout.columns-3 {
+    --columns: 3;
+    z-index: 100;
+  
+  }
+  .masonry-layout.columns-4 {
+    --columns: 4;
+      z-index: 100;
+  
+  }

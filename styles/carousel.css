@@ -1,0 +1,396 @@
+/*  C A R O U S E L  */
+
+/*  special style for pages with carousels  */
+
+/*  CLICK AREAS  */
+
+.click-area {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1001; /* Place the click areas above the carousel */
+  opacity: 50%;
+}
+
+      #left-click-area {
+        left: 0;
+        top: 7%;
+        bottom: 14%;
+        width: 50%; 
+      }
+
+      #right-click-area {
+        right: 0;
+        top: 7%;
+        bottom: 14%;
+        width: 50%; 
+      }
+
+/* Add a new click area for the content between the header and footer */
+#content-click-area {
+  position: fixed;
+  top: 50%; /* Adjust the top position as needed */
+  left: 0; /* Align with the left-click-area */
+  right: 0; /* Align with the right-click-area */
+  bottom: 50%; /* Adjust the bottom position as needed */
+  z-index: 1001; /* Place the click area above the carousel */
+}
+
+/* A B O U T */
+
+.description-text {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw; /* Adjusted width for better responsiveness */
+  height: 100vh; /* Adjusted height for better responsiveness */
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the fourth value (0.8) for opacity */
+  padding: 9vw; /* Adjusted padding for better responsiveness */
+  text-align: left; /* Center the text horizontally */
+  font-size: 2.5vw; /* Adjusted font size for better responsiveness */
+  max-width: 100%; /* Optional: Limit the maximum width */
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.description-text.visible {
+  display: block;
+}
+
+/*  V I D E O  */
+
+#video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#video-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80vh;
+  z-index: 9998;
+  animation: fadeIn 1s ease;
+}
+
+#video-container.fade-in::before {
+  animation: fadeIn 1s ease; /* Apply fade animation to the background */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    background-color: white; /* Start from black */
+  }
+  to {
+    opacity: 1;
+    background-color: transparent; /* End with a transparent background */
+  }
+}
+
+#close-btn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 24px;
+}
+
+/* hide #close-btn when video is playing */
+body.playing-video #close-btn {
+  display: block;
+}
+
+/* Add a class to the body when the video is playing */
+body.playing-video::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the fourth value (0.8) for opacity */
+  z-index: 9990; /* Adjust the z-index as needed */
+  pointer-events: none; /* Allow click events to pass through the background */
+}
+
+/*  S C R O L L  C O N T A I N E R  */
+
+.carousel {
+  position: relative;
+  max-height: calc(100vh - 80px); /* Adjust the height based on your header height */
+  margin-top: 3rem; /* Add top margin to create space for the fixed header */
+}
+
+.carousel [role="list"] {
+  padding: 0;
+  list-style: none;
+}
+
+.carousel-scroll-container {
+  overflow-x: hidden;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+}
+
+.carousel-control img {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+}
+
+.carousel-media {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-right: 12rem;
+  height: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.carousel-item:first-of-type {
+  margin-left: 33.3%;
+}
+
+.carousel-item:last-of-type {
+  margin-right: 33.3%;
+}
+
+.carousel-item>*,
+.carousel-item :is(figure, picture, img) {
+  height: 100%;
+}
+
+.carousel-item img {
+  width: auto;
+  max-width: 100%;
+  max-height: 80vh; /* Adjust the max-height of the images inside the carousel */
+}
+
+.slideshow .carousel-item {
+  height: 90vmin;
+  width: 100%;
+}
+
+.carousel figure {
+  position: relative;
+}
+
+.carousel figcaption {
+  margin-top: 0.5rem;
+  font-size: small;
+}
+
+.carousel figcaption,
+.carousel figcaption * {
+  color: gray;
+}
+
+/* BIG ARROWS */
+
+.carousel-control {
+  display: none; /* Hide the small arrows */
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  z-index: 1000;
+}
+
+body.custom-cursor[dir="rtl"] .custom-cursor {
+  background-image: url('assets/left-arrow.png');
+}
+
+/*  R E S T  O F  C S S  */
+
+@font-face {
+  font-family: "VCROSDMono";
+  src: url("/assets/fonts/VCR_OSD_MONO.ttf") format(truetype);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.2rem 0 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "VCROSDMono", monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  cursor: pointer;
+}
+
+    /* Blurry effect for all links */
+    body a:not(:hover) {
+      filter: blur(0.6px);
+      transition: filter 0.3s ease;
+    }
+
+    /* Remove blur on hover */
+    body a:hover {
+      filter: blur(0);
+    }
+
+    /* Remove blur when link is active or focused */
+    body a:active,
+    body a:focus {
+      filter: blur(0);
+    }
+
+
+/*  H E A D E R  */
+
+header {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-top: 1.25rem;
+  text-align: center;
+  background-color: transparent; /* Set the background color to transparent */
+}
+
+header {
+  pointer-events: auto;
+}
+
+  header h1,
+  header a {
+    font-family: "VCROSDMono", monospace;
+    font-weight: 400;
+    color: #1d1d1f;
+    text-decoration: none;
+    margin: 0;
+  }
+
+  header h1 {
+    font-size: 0.8rem;
+  }
+
+
+label {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+  direction: ltr;
+}
+
+input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+.header-right {
+  margin-right: 1.25rem; /* Adjust the margin based on your design */
+}
+
+.header-left {
+  margin-left: 1.25rem; /* Adjust the margin based on your design */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Remove underline and set color for links inside the header */
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+/*  F O O T E R  */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; /* Add right: 0 to stretch the footer across the whole width */
+  width: 100%;
+  z-index: 1000;
+  padding-bottom: 1.7rem;
+}
+
+          /* Media query for small screens */
+          @media only screen and (max-width: 600px) {
+            .footer {
+              bottom: 0;
+            }
+          }
+
+
+.footer a {
+  margin-right: 200px;
+  font-size: 1rem; /* Adjust the size as needed */
+
+}
+
+
+.footer a:last-child {
+  margin-right: 0;
+}
+
+    /* Blur styles */
+    .blur-images .footer a#imagesLink,
+    .blur-about .footer a#aboutLink,
+    .blur-video .footer a#videoLink {
+      filter: blur(0.1px);
+    }
+              
+
+/*  not sure I need this part  */
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
+}
+
+
+/* Assets */
+
+.back {
+  position: fixed;
+  top: 90%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  z-index: 1001; 
+}

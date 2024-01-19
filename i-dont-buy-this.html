@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/carousel.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <h1>© <a href="about.html">sarah khadra hasni</a> > <a href="selected-works.html">selected works</a> > I Don't Buy
+        This</h1>
+    </div>
+    <div class="header-right">
+      <a class="shop-link" href="shop.html" target="_blank">Shop</a> ↗
+    </div>
+  </header>
+
+  <div class="click-area" id="left-click-area"></div>
+  <div class="click-area" id="right-click-area"></div>
+  <div class="click-area" id="content-click-area"></div>
+
+  <!-- Add this div for the custom cursor -->
+  <div class="custom-cursor"></div>
+
+  <div class="no-cursor">
+  
+  <div class="carousel">
+    <div class="carousel-scroll-container" role="region" aria-label="Image carousel" tabindex="0">
+      <ol class="carousel-media" role="list">
+        <li class="carousel-item">
+          <figure>
+            <img src="media/portfolio/images/idbt/IDBT-img0.jpg" alt="" width="3883" height="4896" loading="lazy" decoding="async">
+          </figure>
+          <figcaption>1/5</figcaption>
+        </li>
+  
+        <li class="carousel-item">
+          <figure>
+            <img src="media/portfolio/images/idbt/IDBT-img1.png" alt="" width="4000" height="2250" loading="lazy" decoding="async">
+          </figure>
+          <figcaption>2/5</figcaption>
+        </li>
+  
+        <li class="carousel-item">
+          <figure>
+            <img src="media/portfolio/images/idbt/IDBT-img2.png" alt="" width="2333" height="3500" loading="lazy" decoding="async">
+          </figure>
+          <figcaption>3/5</figcaption>
+        </li>
+  
+        <li class="carousel-item">
+          <figure>
+            <img src="media/portfolio/images/idbt/IDBT-img3.png" alt="" width="3808" height="4928" loading="lazy" decoding="async">
+          </figure>
+          <figcaption>4/5</figcaption>
+        </li>
+  
+        <li class="carousel-item">
+          <figure>
+            <img src="media/portfolio/images/idbt/IDBT-img4.jpg" alt="" width="4000" height="6000" loading="lazy" decoding="async">
+          </figure>
+          <figcaption>5/5</figcaption>
+        </li>
+      </ol>
+    </div>
+  </div>
+  
+  <!-- Navigation buttons, to be cloned and inserted into the carousel with JavaScript -->
+<template id="carousel-controls">
+  <ol role="list" class="carousel-controls" aria-label="Navigation controls">
+    <li>
+      <button class="carousel-control" aria-label="Previous" data-direction="start">
+        <!-- https://feathericons.com/ -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button class="carousel-control" aria-label="Next" data-direction="end">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+      </li>
+    </ol>
+
+    <div class="description-text" id="aboutDescription">
+      <p>This ambiguous space built around the concept of the afterlife starts conversations about death and beliefs in relation to consumerism. Depictions of the afterlife often take the form of a parabolic interpretation of current dogma. Following this logic, Purgatory is presented as a duty-free shop* where you can buy anything and everything.  The name ‘I don’t buy this’ plays on the double meaning ‘buying’: not only purchasing goods and services but also believing in something. Available products show what we value, among them gun pillows to highlight the conflict between (Comfort and Violence) and Hyperrealities (Afterlife Advertised)**, a publication exploring these themes.</p>
+    </div>
+
+  </template>
+
+  <div id="video-container">
+    
+    <video id="video">
+      <source src="" type="video/mp4" id="video-source">
+    </video>
+    
+    <span id="close-btn">&times;</span>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer">
+      <a href="#" id="carouselLink">IMAGES</a> — <a href="#" id="aboutLink">ABOUT</a> — <a href="#" id="videoLink">VIDEO</a>
+    </div>
+  </footer>
+ 
+  <script src="scripts/carousel.js"></script>
+  <script src="scripts/video.js"></script>
+  <script src="scripts/about.js"></script>
+
+
+</body>
+</html>
