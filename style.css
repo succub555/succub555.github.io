@@ -1,0 +1,161 @@
+@font-face {
+    font-family: VCR;
+    src: url("fonts/VCR_OSD_MONO.ttf");
+}
+@font-face {
+    font-family: clear;
+    src: url("fonts/ClearSans-Regular.ttf");
+}
+
+html{
+    
+}
+
+body{
+    background: rgb(149,175,214);
+    background-image: linear-gradient(180deg, rgba(149,175,214,1) 19%, rgba(255,255,255,1) 100%);
+    background-attachment: fixed;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 20vh 5vw 10vh 5vw;
+    font-family: VCR;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    isolation: isolate;
+    cursor: url("big-pointer-cursor.png"),auto;
+}
+
+a, button{
+    cursor: url("big-click-cursor.png") 35 0, pointer;
+    z-index: 100;
+}
+
+img{
+    z-index: -1;
+}
+
+.notes{
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* p{
+    color: black;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke: 15px white;
+    paint-order: stroke fill;
+} */
+
+.text, video, .essay{
+    display: block;
+    margin: auto;
+}
+
+.header{
+    z-index: -1;
+    position: absolute;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+}
+
+video{
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgb(197, 197, 197) 0px 0px 50px 5px;
+}
+
+.img{
+    display: block;
+    position: absolute;
+    z-index: -3;
+}
+
+.essaywrap {
+    margin: auto;
+    width: 60vw;
+    height: 70vh;
+    background-color: white;
+    position: relative;
+    box-shadow: rgb(197, 197, 197) 0px 0px 50px 5px;
+}
+
+.essay, .photoessay{
+    height: 70vh;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 70px 50px 60px 50px;
+    margin-top: 2vh;
+    box-sizing: border-box;
+    font-family: clear;
+}
+
+.essay img{
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+.photoessay img{
+    width: 100%;
+}
+
+.essay:before , .photoessay:before{
+    content: '';
+    box-shadow: black inset 0px -5px 20px -10px;;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.essay::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+.essay::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(149,175,214);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
+.photoessay::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+.photoessay::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(149,175,214);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#changingText{
+    font-size: 3rem;
+    height: 4rem;
+}
+
+.button{
+    filter: invert(1)
+}
+a:hover{
+    transform: scale(1.05)
+}
+a:active{
+    transform: scale(0.95)
+}
