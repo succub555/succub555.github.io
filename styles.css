@@ -1,0 +1,421 @@
+@font-face {
+    font-family: 'VCR_OSD_MONO';
+    src: url('VCR_OSD_MONO.woff2') format('woff2'),
+         url('VCR_OSD_MONO.woff') format('woff'),
+         url('VCR_OSD_MONO.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Condensed Bold';
+    src: url('fonts/HelveticaNeue.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a:link, a:visited {
+    color: red;
+    text-decoration: none;
+  }
+  
+  a:hover, a:active {
+    color:black;
+    background-color: red;
+  }
+::selection {
+    color: red;
+    background: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background: url('bg.png') no-repeat center center/cover;
+    background-attachment: fixed;
+    cursor: url('big-pointer-cursor.png'), auto;
+    font-family: 'VCR_OSD_MONO', monospace;
+    text-transform: uppercase;
+}
+
+/* Popup container positioning */
+.popup {
+    width: 200px; /* Adjust width to suit your content */
+    height: 50px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 170px;  /* Adjust as needed */
+    left: 30%;  /* Adjust to move left */
+    transform: translateX(-50%);
+    z-index: 999;
+    overflow: hidden;  /* Ensure content stays within the box */
+}
+
+/* Content container that holds both spans */
+.popup-content {
+    display: flex;
+    width: 100%; /* Ensures content takes up the full width */
+    animation: marquee 10s linear infinite; /* Adjust duration for scrolling speed */
+}
+
+/* Watch me text styling */
+.watch-me {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+    padding-right: 10px;  /* Optional: space between text blocks */
+}
+
+/* Hover effect - Start animation on hover */
+.popup:hover .popup-content {
+    animation: marquee 10s linear infinite; /* Adjust duration for scrolling speed */
+}
+
+/* Infinite marquee animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);  /* Start position */
+    }
+    100% {
+        transform: translateX(-100%);  /* End position - moves the entire width of both spans */
+    }
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+}
+
+/* LOGO (LEFT) */
+.logo {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* TEXT (MIDDLE) */
+.description {
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 1.3;
+    color: black;
+    text-align: left;
+    max-width: none;
+    margin: 0 15px;
+}
+
+/* IMAGE (RIGHT) */
+.corner-image {
+    width: 90px;
+    height: auto;
+    transform: rotate(90deg);
+    flex-shrink: 0;
+    margin-left: 20px;
+    margin-right: 35px;
+}
+
+/* MAIN CONTENT */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    margin-top: 120px;
+}
+
+/* BUTTONS SECTION */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    width: 100%;
+    margin-top: 350px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+}
+
+.button {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+/* Scrollable content section */
+.scrollable-content.hidden {
+    display: none;
+}
+
+.scrollable-content {
+    margin-top: 120px;
+    padding: 20px;
+    width: 100vw;
+    max-width: none;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+/* Draggable images */
+.draggable-img {
+    position: absolute;
+    cursor: grab;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover title style */
+/* Hover title style */
+.hover-title {
+    font-family: 'Helvetica Neue Condensed Bold', Arial, sans-serif;
+    letter-spacing: -0.02em;
+    position: fixed;  /* Position it appropriately */
+    bottom: -25px; /* Adjust to prevent overlap */
+    top: 50%;  /* Adjust based on your design */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    color: red;
+    font-size: 18px;
+    z-index: 9999;
+    background-color: transparent;
+    display: none;  /* Hide initially */
+    text-align: left;
+}
+
+/* Show on hover */
+.scattered-img:hover + .hover-title {
+    display: block;  /* Show the hover title when the image is hovered */
+}
+
+/* Apply background to each line of text */
+.hover-title span {
+    background-color: black;  /* Set background color to red */
+    display: inline-block;  /* Keep background confined to text width */
+    margin-bottom: 2px;  /* Create space between lines */
+    padding: 0px 2px;  /* Padding for each line */
+}
+
+.image-wrapper {
+    position: absolute;
+}
+
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Ensures no horizontal scrolling */
+  }
+  
+  .video {
+    position: absolute;
+    width: 200px; /* Adjust size */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+  }
+  
+  /* Fixed, scattered placement */
+  .video:nth-child(1) {
+    top: 10%;
+    left: 15%;
+  }
+  
+  .video:nth-child(2) {
+    top: 40%;
+    left: 30%;
+  }
+  
+  .video:nth-child(3) {
+    top: 20%;
+    left: 55%;
+  }
+  
+  .video:nth-child(4) {
+    top: 60%;
+    left: 75%;
+  }
+  
+  
+  
+
+#video-content {
+    display: none; /* Initially hide the video content */
+}
+#creative-services, #personal-projects {
+    display: none; /* Hide sections by default */
+}
+
+.video-thumbnail-link img {
+    width: 10%; /* Reduces the image size to 25% of its original */
+    height: auto; /* Maintains aspect ratio */
+}
+/* Scattered images styling */
+.scattered-img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect for scattered images */
+.scattered-img:hover {
+    transform: scale(1.1);
+}
+
+/* Apply scattered positioning to .image-wrapper instead of .scattered-img */
+.image-wrapper:nth-child(1) {
+    top: 10%;
+    left: 15%;
+}
+
+.image-wrapper:nth-child(2) {
+    top: 30%;
+    left: 50%;
+}
+
+.image-wrapper:nth-child(3) {
+    top: 70%;
+    left: 5%;
+}
+
+.image-wrapper:nth-child(4) {
+    top: 50%;
+    left: 80%;
+}
+
+.image-wrapper:nth-child(5) {
+    top: 20%;
+    left: 65%;
+}
+
+.image-wrapper:nth-child(6) {
+    top: 60%;
+    left: 10%;
+}
+
+.image-wrapper:nth-child(7) {
+    top: 30%;
+    left: 75%;
+}
+
+.image-wrapper:nth-child(8) {
+    top: 80%;
+    left: 40%;
+}
+
+.image-wrapper:nth-child(9) {
+    top: 5%;
+    left: 80%;
+}
+
+.image-wrapper:nth-child(10) {
+    top: 40%;
+    left: 25%;
+}
+
+
+/* Frame container styling */
+.frame-container {
+    position: fixed;
+    top: 50%;
+    left: 30%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    height: 500px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 10px;
+}
+
+/* Close button styling */
+.frame-container button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.frame-container button:hover {
+    background: darkred;
+}
+
+.clip-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust this as needed */
+}
+
+.clip {
+    position: absolute;
+    width: 200px;  /* Adjust the size of the videos */
+    height: 150px; /* Adjust the size of the videos */
+    object-fit: cover; /* Ensures videos scale properly */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Randomize position of each clip */
+.clip:nth-child(1) {
+    top: 10%; /* Adjust positioning */
+    left: 15%;
+}
+
+.clip:nth-child(2) {
+    top: 40%;
+    left: 30%;
+}
+
+.clip:nth-child(3) {
+    top: 60%;
+    left: 70%;
+}
+
+.clip:nth-child(4) {
+    top: 80%;
+    left: 50%;
+}
+
+

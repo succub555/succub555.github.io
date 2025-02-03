@@ -1,0 +1,144 @@
+/* Base font size */
+html {
+    font-size: 0.5rem;
+}
+
+@font-face {
+    font-family: 'VCR_OSD_MONO';
+    src: url('VCR_OSD_MONO.woff2') format('woff2'),
+         url('VCR_OSD_MONO.woff') format('woff'),
+         url('VCR_OSD_MONO.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: 'VCR_OSD_MONO', monospace;
+}
+
+
+/* Marquee 1 */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #ff5e00;
+    color: black;
+    font-size: 1.7rem; /* 1.6rem is equivalent to 16px */
+}
+
+.marquee-text {
+    animation: marquee1 30s linear infinite;
+}
+
+@keyframes marquee1 {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Marquee 2 */
+.image-marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 2.5rem; /* Adjusted from 40px to 2.5rem */
+}
+
+.image-marquee-container img {
+    margin-right: 1.25rem; /* Adjusted from 200px to 1.25rem */
+    width: 30%; /* Set image size to 30% of the container */
+    animation: marquee2 30s linear infinite alternate;
+}
+
+@keyframes marquee2 {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.special-title {
+    background-color: #f7ff00;
+    display: inline; /* Ensure the background only covers the text, not the whole line */
+}
+
+/* Introduction */
+.introduction {
+    margin-top: 1.25rem; /* Adjusted from 20px to 1.25rem */
+    padding: 1.25rem; /* Adjusted from 20px to 1.25rem */
+    font-size: 1.1rem;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 1.25rem; /* Adjusted from 20px to 1.25rem */
+}
+
+.gallery-row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 1.25rem; /* Adjusted from 20px to 1.25rem */
+}
+
+.gallery-item {
+    width: calc(25% - 1.25rem); /* Adjusted from 20px to 1.25rem */
+    margin: 1.25rem; /* Adjusted from 10px to 1.25rem */
+    text-align: left;
+}
+
+.gallery-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    transition: filter 0.3s;
+}
+
+.description {
+    margin-top: 0.625rem; /* Adjusted from 10px to 0.625rem */
+    font-size: 0.8rem;
+}
+
+/* Footer */
+footer {
+    position: static;
+    width: 100%;
+    text-align: left;
+    padding: 0.625rem; /* Adjusted from 10px to 0.625rem */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+footer img {
+    width: 3.125rem; /* Adjusted from 50px to 3.125rem */
+    height: 1.25rem; /* Adjusted from 20px to 1.25rem */
+    margin: 0 1.25rem; /* Adjusted from 10px to 1.25rem */
+}
+
+footer p {
+    margin-right: auto; /* Push the text to the left */
+}
+
+/* Center the image */
+footer img {
+    margin: 0 auto;
+}
+
+/* Remove the fixed positioning of the back-to-home link */
+.back-to-home {
+    position: static;
+    color: black;
+    background-color: #ff5e00;
+    cursor: pointer;
+    margin-left: auto;
+}

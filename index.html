@@ -1,40 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/main.css">
-  <script src="scripts/splash.js"></script>
-  <title>ENTER</title>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succubi</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <div class="container">
+        <header class="header">
+            <!-- Adding a unique ID to the logo -->
+            <img src="succubi.png" alt="Succubi Logo" class="logo" id="logo">
+            
+            <p class="description">
+                خضراء سارة (Sarah Khadra), working under the alias <a href="https://instagram.com/succubi">@succubi</a>, is a multimedia artist based in Berlin, Germany. Creating audio and visual narratives inspired by — the 2000-2010s internet culture — anime — early 3D video game graphics — home gaming consoles — fantasy lore & aesthetics — cult classic horror — the idea of collectibles and fairy tales.
+            </p>
+            <img src="sarah.png" alt="Decorative Image" class="corner-image">
+        </header>
+    </div>
+    
 
-  <div class="big-cursor"></div>
-  <div class="no-cursor">
+        
+        <div class="buttons">
+            <img src="cs-button.png" alt="Creative Services" class="button" id="cs-btn">
+            <img src="ps-button.png" alt="Personal Projects" class="button" id="ps-btn">
+        </div>
 
-             <div class="index">
-                          <div id="changingText">˶ᵔ ᵕ ᵔ˶</div>
-                          <div class="background"></div>
-                          <div class="content">
-                                    <img src="assets/img-1.png" alt="Image 1">
-                                    <img src="assets/img-2.png" alt="Image 2">
-                                    <!-- Add more images as needed -->
-             </div>
+        <!-- Scrollable content sections (both in HTML) -->
+        <div class="scrollable-content hidden" id="creative-services">
+            <div class="image-container">
 
-             <div class="marquee first">
-                          <span class="highlight">CLICK ANYWHERE TO ENTER ˚₊‧꒰ა ☆ ໒꒱ ‧₊˚</span>
-             </div>
-             
-             <div class="marquee second">
-                    <span class="highlight">ଘ(੭*ˊᵕˋ)੭* ੈ♡‧₊˚ WELCOME TO MY WEBSITE ૮ ˶ᵔ ᵕ ᵔ˶ ა</span>
-             </div>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <!-- First instance of text -->
+                        <span id="watchMe" class="watch-me">Watch me Watch me Watch me Watch me Watch me</span>
+                        <!-- Duplicate of the text -->
+                        <span class="watch-me">Watch me Watch me Watch me Watch me Watch me</span>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="content/cs/sis-69-paddle.png" alt="Creative Service Image 1" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Sisters in Solidarity</span>
+                        <span>[Project] "Can y0u lower y0ur vo!ce?" fundraiser</span>
+                        <span>Creative direction & assistant curation</span>
+                        <span>[Paddle design] Paulina Graw</span>
+                    </div>
+                </div>
 
-             <script src="scripts/kaomoji.js"></script>
+                <div class="image-wrapper">
+                    <img src="content/cs/radar-everywhere-promo-1.png" alt="Creative Service Image 2" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Radar</span>
+                        <span>[Project] Opening Night at Georgia Bar</span>
+                        <span>Promo Strategy - Radar is everywhere Concept</span>
+                    </div>
+                </div>
+
+                <div class="image-wrapper">
+                    <img src="content/cs/wet tshirt.png" alt="Creative Service Image 3" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Floorgasm CSD</span>
+                        <span>Wet T-Shirt Contest Flyer</span>
+                    </div>
+                </div>
+
+                <div class="image-wrapper">
+                    <img src="content/cs/radar-everywhere-promo-3.png" alt="Creative Service Image 4" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Radar</span>
+                        <span>[Project] Opening Night at Georgia Bar</span>
+                        <span>Promo Strategy - Radar is everywhere Concept</span>
+                    </div>
+                </div>
+
+                <div class="image-wrapper">
+                    <img src="content/cs/3.png" alt="Creative Service Image 5" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Floorgasm CSD</span>
+                        <span>Meme Promo Strategy</span>
+                    </div>
+                </div>
+
+                <div class="image-wrapper">
+                    <img src="content/cs/radar-merch-concept.png" alt="Creative Service Image 6" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Radar</span>
+                        <span>Merch Concept</span>
+                    </div>
+                </div>
+
+                <div class="image-wrapper">
+                    <img src="content/cs/sis-butterfly.png" alt="Creative Service Image 7" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Sisters in Solidarity</span>
+                        <span>[Project] "Can y0u lower y0ur vo!ce?" fundraiser</span>
+                        <span>Creative direction & curation</span>
+                        <span>Artist announcement</span>
+                    </div>
+                </div>
+
+                <div class="image-wrapper">
+                    <img src="content/cs/radar-everywhere-promo-2.png" alt="Creative Service Image 8" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Radar</span>
+                        <span>[Project] Opening Night at Georgia Bar</span>
+                        <span>Promo Strategy - Radar is everywhere Concept</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="scrollable-content hidden" id="personal-projects">
+            <div class="image-container">
+
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <!-- First instance of text -->
+                        <span id="watchMe" class="watch-me">Read me Read me Read me Read me Read me</span>
+                        <!-- Duplicate of the text -->
+                        <span class="watch-me">Read me Read me Read me Read me Read me</span>
+                    </div>
+                </div>
+
+                <div class="image-wrapper">
+                    <img src="content/ps/logo-proto.png" alt="Creative Service Image 1" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>JUNK ROOM</span>
+                        <span>[WORK IN PROGRESS...]</span>
+                        <span>2025</span>
+                    </div>
+                </div>
+        
+                <div class="image-wrapper">
+                    <img src="content/ps/IDBT-img3.png" alt="Creative Service Image 2" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Radar</span>
+                        <span>[Project] Opening Night at Georgia Bar</span>
+                        <span>Promo Strategy - Radar is everywhere Concept</span>
+                    </div>
+                </div>
+        
+                    <!-- Popup Content -->
+                    <img src="content/ps/rifle.png" alt="Creative Service Image 3" class="scattered-img draggable-img" onclick="openFrame()">
+                    <div class="hover-title">
+                        <span>Sunset Rifle (Plush Art)</span>
+                        <span>Comfort of Violence</span>
+                        <span>[PROJECT] I DON'T BUY THIS* 2022</span>
+                    </div>
+                </div>
+
+                <!-- Frame Container for the iframe (Initially Hidden) -->
+                <div id="frame" class="frame-container" style="display:none;">
+                    <iframe id="shop-iframe" src="shop.html" width="100%" height="500px" style="border:none;"></iframe>
+                    <button onclick="closeFrame()">Close</button>
+                </div>
+        
+                <div class="image-wrapper">
+                    <img src="content/ps/aa_idbt-cover.png" alt="Creative Service Image 4" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Radar</span>
+                        <span>[Project] Opening Night at Georgia Bar</span>
+                        <span>Promo Strategy - Radar is everywhere Concept</span>
+                    </div>
+                </div>
+        
+                <div class="image-wrapper">
+                    <img src="content/ps/yournamehere.png" alt="Creative Service Image 5" class="scattered-img draggable-img">
+                    <div class="hover-title">
+                        <span>[Client] Floorgasm CSD</span>
+                        <span>Meme Promo Strategy</span>
+                    </div>
+                </div>
+        
+        <!-- Video Container for Video 1 -->
+        <div class="clip-container">
+            <video class="clip" muted loop>
+                <source src="content/ps/video/clip-1.mp4" type="video/mp4">
+            </video>
+            <video class="clip" muted loop>
+                <source src="content/ps/video/clip-2.mp4" type="video/mp4">
+            </video>
+            <video class="clip" muted loop>
+                <source src="content/ps/video/clip-3.mp4" type="video/mp4">
+            </video>
+            <video class="clip" muted loop>
+                <source src="content/ps/video/clip-4.mp4" type="video/mp4">
+            </video>
+        </div>
+     
+        
+
+            </div>
+        </div>
+        
+
+<!-- Video content section (hidden by default) -->
+<div id="video-content" class="content-section" style="display: none;">
+    <div class="videos">
+        <!-- Your video embeds or video elements -->
+        <div class="video-container">
+            <video class="video" muted loop>
+                <source src="content/cs/video/SIS PROMO.mp4" type="video/mp4">
+            </video>
+            <video class="video" muted loop>
+                <source src="content/cs/video/FLOORGASM-REEL.mp4" type="video/mp4">
+            </video>
+            <video class="video" muted loop>
+                <source src="content/cs/video/MINIREEL-3.mp4" type="video/mp4">
+            </video>
+            <video class="video" muted loop>
+                <source src="content/cs/video/RADAR-REEL.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- Hover Title -->
+        <div id="hover-title" class="hover-title"></div>
+    </div>
+
+    <script src="toggle.js"></script>
+    <script src="hover.js"></script>
+    <script src="drag.js"></script>
+    <script src="watchme.js"></script> 
+    <script src="video.js"></script>
+    <script src="frame.js"></script>
+    <script src="playonhover.js"></script>
+    <script src="refresh.js"></script>
+
 
 </body>
-
 </html>
