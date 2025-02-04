@@ -6,10 +6,12 @@
 }
 
 @font-face {
-    font-family: 'Helvetica Neue Condensed Bold';
+    font-family: 'Helvetica Neue';
     src: url('fonts/HelveticaNeue.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
+    font-stretch: condensed;
     font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -202,7 +204,9 @@ body {
 /* Hover title style */
 /* Hover title style */
 .hover-title {
-    font-family: 'Helvetica Neue Condensed Bold', Arial, sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
     letter-spacing: -0.02em;
     position: fixed;  /* Position it appropriately */
     bottom: -25px; /* Adjust to prevent overlap */
