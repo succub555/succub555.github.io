@@ -150,7 +150,7 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: 10vw; /* Adjusts based on viewport width */
     width: 100%;
     margin-top: 350px;
     position: fixed;
@@ -171,10 +171,15 @@ body {
     transform: scale(1.05);
 }
 
-/* Scrollable content section */
+/* Scrollable content section 
 .scrollable-content.hidden {
     display: none;
 }
+
+.hidden {
+    display: none !important;
+}
+*/
 
 .scrollable-content {
     margin-top: 120px;
@@ -422,4 +427,73 @@ body {
     left: 50%;
 }
 
+
+/* M O B I L E  V E R S I O N */
+
+@media screen and (max-width: 820px) { /* Adjust breakpoint as needed */
+    body {
+      background-image: url('bg-mobile.png'); /* Set mobile-specific background */
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
+  @media screen and (max-width: 820px) {
+    .logo {
+      position: absolute;
+      bottom: -75vh; /* 5% of the viewport height */
+      left: 5vw; /* 5% of the viewport width */
+      width: 50vw; /* Adjust the size based on screen width */
+      max-width: 120px; /* Prevents it from getting too large */
+      z-index: 2007;
+    }
+  }
+
+  @media screen and (max-width: 820px) {
+    .corner-image {
+      position: absolute;
+      bottom: -75vh; /* 5% of the viewport height */
+      right: -5vw;
+      width: 20vw; /* Adjust based on screen width */
+      max-width: 150px; /* Ensures it doesn't get too large */
+      transform: rotate(0deg);
+
+    }
+  }
+
+  @media (max-width: 768px) {
+    .buttons {
+        flex-direction: column; /* Stack buttons on mobile */
+        gap: 5vh; /* Less spacing between them */
+        align-items: center; /* Center them */
+        width: 80%; /* Slightly narrower so they don't touch screen edges */
+        top: -10%; /* Center in viewport */
+
+    }
+
+    .buttons button {
+        width: 100%; /* Make buttons take full width */
+        max-width: 300px; /* Prevent them from getting too large */
+    }
+}
+
+@media (max-width: 768px) { 
+    #description {
+        display: none; /* Ensure it's hidden by default */
+        position: absolute; /* Optional, for better mobile placement */
+        top: 0;
+        left: 0;
+    }
+    
+
+    #logo {
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .description {
+        display: none;
+    }
+}
 
