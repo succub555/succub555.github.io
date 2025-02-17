@@ -1,13 +1,11 @@
 @font-face {
     font-family: 'VCR_OSD_MONO';
-    src: url('VCR_OSD_MONO.woff2') format('woff2'),
-         url('VCR_OSD_MONO.woff') format('woff'),
-         url('VCR_OSD_MONO.ttf') format('truetype');
+    src: url('VCR_OSD_MONO.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Helvetica Neue';
-    src: url('fonts/HelveticaNeue.woff') format('woff');
+    src: url('HelveticaNeue.woff') format('woff');
     font-weight: 700;
     font-stretch: condensed;
     font-style: normal;
