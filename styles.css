@@ -323,41 +323,58 @@ body {
     left: 5%;
 }
 
+/*get soaked poster*/
 .image-wrapper:nth-child(4) {
     top: 50%;
     left: 80%;
 }
+
+/*radar eye*/
 
 .image-wrapper:nth-child(5) {
     top: 20%;
     left: 65%;
 }
 
+/*floorgasm meme*/
 .image-wrapper:nth-child(6) {
     top: 60%;
     left: 10%;
 }
-
+/*radar underwear*/
 .image-wrapper:nth-child(7) {
     top: 30%;
-    left: 75%;
+    left: 5%;
 }
-
+/*butterfly*/
 .image-wrapper:nth-child(8) {
     top: 80%;
     left: 40%;
+    z-index: 1;
 }
-
+/*radar mouth*/
 .image-wrapper:nth-child(9) {
     top: 5%;
     left: 80%;
 }
 
+/*vintage club*/
 .image-wrapper:nth-child(10) {
     top: 40%;
     left: 25%;
 }
 
+/*rookie logo*/
+.image-wrapper:nth-child(11) {
+    top: 70%;
+    left: 65%;
+}
+
+/*queenie bts*/
+.image-wrapper:nth-child(12) {
+    top: 60%;
+    left: 45%;
+}
 
 /* Frame container styling */
 .frame-container {
